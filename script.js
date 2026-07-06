@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 const changeBtn = document.querySelector(".generate");
 const colorTitle = document.querySelector("#color-tag");
 
@@ -15,8 +15,8 @@ const generateColor = function () {
   } while (hexCode === "" || hexCode === lastCode);
 
   lastCode = hexCode;
-  applyColor(hexCode);
-  displayHex(hexCode);
+  updateTxt(hexCode);
+  changeBg(hexCode);
 
   // Contrast
   const red = parseInt(hexCode.substring(0, 2), 16);
@@ -32,10 +32,10 @@ const generateColor = function () {
   }
 };
 
-const applyColor = function (code) {
+const updateTxt = function (code) {
   colorTitle.innerHTML = `#${code}`;
 };
-const displayHex = function (code) {
+const changeBg = function (code) {
   document.body.style.backgroundColor = `#${code}`;
 };
 
