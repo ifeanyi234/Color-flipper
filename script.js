@@ -6,14 +6,7 @@ const hexArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
 let hexCode = "";
 let lastCode = "";
 
-const applyColor = function (code) {
-  colorTitle.innerHTML = `#${code}`;
-};
-const displayHex = function (code) {
-  document.body.style.backgroundColor = `#${code}`;
-};
-
-changeBtn.addEventListener("click", function () {
+const generateColor = function () {
   do {
     hexCode = "";
     for (let i = 0; i < 6; i++) {
@@ -37,4 +30,13 @@ changeBtn.addEventListener("click", function () {
   } else {
     document.body.style.color = "#ffffff";
   }
-});
+};
+
+const applyColor = function (code) {
+  colorTitle.innerHTML = `#${code}`;
+};
+const displayHex = function (code) {
+  document.body.style.backgroundColor = `#${code}`;
+};
+
+changeBtn.addEventListener("click", generateColor);
